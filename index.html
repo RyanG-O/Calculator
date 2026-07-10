@@ -9,39 +9,40 @@
 <body>
     <h1>Calculator</h1>
     <div id="container">
-        <div id="display"></div>
+        <div id="display">0</div>
         <div id="button-container">
             <div class="row">
                 <div class="button"></div>
                 <div class="button"></div>
                 <div class="button"></div>
-                <button class="button">C</button>
+                <button id="clear" class="button">C</button>
             </div>
             <div class="row">
-                <button class="button">7</button>
-                <button class="button">8</button>
-                <button class="button">9</button>
-                <button class="button">÷</button>
+                <button class="button digit">7</button>
+                <button class="button digit">8</button>
+                <button class="button digit">9</button>
+                <button class="button operator">÷</button>
             </div>
             <div class="row">
-                <button class="button">4</button>
-                <button class="button">5</button>
-                <button class="button">6</button>
-                <button class="button">×</button>
+                <button class="button digit">4</button>
+                <button class="button digit">5</button>
+                <button class="button digit">6</button>
+                <button class="button operator">×</button>
             </div>
             <div class="row">
-                <button class="button">1</button>
-                <button class="button">2</button>
-                <button class="button">3</button>
-                <button class="button">-</button>
+                <button class="button digit">1</button>
+                <button class="button digit">2</button>
+                <button class="button digit">3</button>
+                <button class="button operator">-</button>
             </div>
             <div class="row">
-                <button class="button">0</button>
-                <button class="button">.</button>
-                <button class="button">=</button>
-                <button class="button">+</button>
+                <button class="button digit">0</button>
+                <button class="button digit">.</button>
+                <button id="equals" class="button">=</button>
+                <button class="button operator">+</button>
             </div>
         </div>
     </div>
+    <script src="calculator.js"></script>
 </body>
 </html>
