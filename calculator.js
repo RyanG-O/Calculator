@@ -1,5 +1,6 @@
 let display = document.querySelector("#display");
 
+let result = false;
 let first = true;
 let a = "";
 let b = "";
@@ -49,6 +50,11 @@ function removeHighlight(event){
 
 document.querySelectorAll(".button.digit").forEach((element) => {
     element.addEventListener("click", (event) => {
+        if (result && op === ""){
+            a = "";
+            result = false;
+            first = true;
+        }
         if (first && a.length < 7){
             a = a.concat(event.target.textContent);
             display.textContent = a;
@@ -87,8 +93,18 @@ document.querySelectorAll(".button.operator").forEach((element) => {
 });
 
 document.querySelector("#equals").addEventListener("click", () => {
+    if (a === "" || b === ""){
+        return;
+    } 
+    if (op === "/" && Number(b) === 0){
+        display.textContent = "ERR";
+        document.querySelector("#clear").dispatchEvent("click");
+        return;
+    }
     a = operate(a, b, op);
     display.textContent = a;
     b = "";
+    op = "";
     removeHighlight();
+    result = true;
 });
