@@ -22,6 +22,8 @@ function divide(a, b){
 }
 
 function operate(a, b, op){
+    a = Number(a);
+    b = Number(b);
     switch (op){
         case "+":
             return add(a, b);
@@ -85,7 +87,8 @@ document.querySelectorAll(".button.operator").forEach((element) => {
 });
 
 document.querySelector("#equals").addEventListener("click", () => {
-    let result = operate(a, b, op);
-    document.querySelector("#clear").dispatchEvent(new MouseEvent("click"));
-    display.textContent = result;
+    a = operate(a, b, op);
+    display.textContent = a;
+    b = "";
+    removeHighlight();
 });
