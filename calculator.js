@@ -4,7 +4,7 @@ let result = false;
 let first = true;
 let a = "";
 let b = "";
-let op;
+let op = "";
 
 function add(a, b){
     return a + b;
@@ -76,6 +76,9 @@ document.querySelector("#clear").addEventListener("click", () => {
 
 document.querySelectorAll(".button.operator").forEach((element) => {
     element.addEventListener("click", (event) => {
+        if (op !== ""){
+            return;
+        }
         op = event.target.textContent;
         switch(op){
             case "×":
